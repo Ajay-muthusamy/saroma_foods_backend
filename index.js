@@ -96,7 +96,7 @@ app.post('/saarofoods/download-pdf', (req, res) => {
   // From Address (with width constraint)
   doc.fillColor('#000000') // Black color for address text
    .fontSize(12)
-   .text('From:', 50, addressStartY, { underline: true, width: addressWidth }) // Width for the "From" address
+   .text('From:', 50, addressStartY, { underline: true, width: addressWidth }) 
    .moveDown(0.2)
    .text('Saroma Agro Foods', 50, addressStartY + 15, { width: addressWidth })
    .text('171/5-A, KKC Complex, Tiruchengode Road, Sankari,', 50, addressStartY + 30, { width: addressWidth })
@@ -114,8 +114,9 @@ app.post('/saarofoods/download-pdf', (req, res) => {
     .text(`Name: ${customer.name}`, 350, addressStartY + 15, { width: addressWidth })
     .text(`Phone: ${customer.phoneNo}`, 350, addressStartY + 30, { width: addressWidth })
     .text(`Pincode: ${customer.landMark}`, 350, addressStartY + 45, { width: addressWidth })
+    .text(`Order Date: ${new Date(customer.createdAt).toLocaleString()}`, 350, addressStartY + 85, { width: addressWidth })
     .text(`Address: ${customer.address}`, 350, addressStartY + 60, { width: addressWidth })
-    .text(`Order Date: ${new Date(customer.createdAt).toLocaleString()}`, 350, addressStartY + 85, { width: addressWidth });
+   ;
 
   doc.end();
 });
