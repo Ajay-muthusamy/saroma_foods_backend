@@ -114,8 +114,8 @@ app.post('/saarofoods/download-pdf', (req, res) => {
     .text(`Name: ${customer.name}`, 350, addressStartY + 15, { width: addressWidth })
     .text(`Phone: ${customer.phoneNo}`, 350, addressStartY + 30, { width: addressWidth })
     .text(`Pincode: ${customer.landMark}`, 350, addressStartY + 45, { width: addressWidth })
-    .text(`Order Date: ${new Date(customer.createdAt).toLocaleString()}`, 50, addressStartY + 105, { width: addressWidth })
-    .text(`Address: ${customer.address}`, 350, addressStartY + 100, { width: addressWidth })
+    .text(`Order Date: ${new Date(customer.createdAt).toLocaleString()}`, 350, addressStartY + 58, { width: addressWidth })
+    .text(`Address: ${customer.address}`, 350, addressStartY + 70, { width: addressWidth })
    ;
 
   doc.end();
