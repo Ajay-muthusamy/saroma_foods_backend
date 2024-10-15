@@ -1,5 +1,6 @@
 // models/Order.js
 
+import { request } from "express";
 import mongoose from "mongoose";
 
 const customerOrderSchema = mongoose.Schema({
@@ -41,6 +42,10 @@ const customerOrderSchema = mongoose.Schema({
     total: {
         type: Number,
         required: true
+    },
+    customerId:{
+        type:String,
+        required:true
     },
     createdAt: {
         type: Date,
